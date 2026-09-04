@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "hash_normalization": "UTF-8 source text, with CRLF converted to LF.",
+  "sources": {
+    "slaternet": {
+      "commit": "5dd20e62e88a1dad2f2c545d3eae871ca32c1c7b",
+      "archive_sha256": "b4e0ab38b50b002ba152c44b4db4c4268c7b83931cd1c3b1b4168ce79be9356a"
+    },
+    "psiformer": {
+      "commit": "71c7ef65d3fe8d2155e3f1eba5a5493e37c7a698",
+      "archive_sha256": "1166dbee370711c2aa3fd1e8153869ebc380c483f3de15ca2e5b3468aa4eff55"
+    }
+  },
+  "files": [
+    {
+      "published_file": "complex_psiformer/systems/units.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/systems/units.py",
+      "source_lf_sha256": "05c1f19e029ea990661078223cc957331dd07be70599bbdc4541b95c70f57558",
+      "published_lf_sha256": "77ce5e765556b15e8882b1aa65cf9517247b74c11940c480ed33c80fab13db52"
+    },
+    {
+      "published_file": "complex_psiformer/systems/supercell.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/systems/supercell.py",
+      "source_lf_sha256": "652ffab353970f894898b13ba8a30e4fe572e6d0b6059e7824e39466a4bc0236",
+      "published_lf_sha256": "5b51ef287fd60bda3f27768c28179b0952a3dcd8002636a15ca7f6950b69be87"
+    },
+    {
+      "published_file": "complex_psiformer/systems/hamiltonian.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/systems/hamiltonian.py",
+      "source_lf_sha256": "9db4669d2e833166bfcf4f8c034cd6d909d81d2c2e5756095a35e198f52356a2",
+      "published_lf_sha256": "f4d907cbfcf98c242d226e36d41aacc95dda98c38bc86bc978218a8ee995cb43"
+    },
+    {
+      "published_file": "complex_psiformer/features/periodic.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/features/periodic.py",
+      "source_lf_sha256": "a4c03b5a42b97ce01c2ad27e8d6d25402b9e9a30894128f5311037bdac858606",
+      "published_lf_sha256": "4f8d8c8e65493e84a556f2590afc2f9918703a1e187ac8782eb8615626971c2b"
+    },
+    {
+      "published_file": "complex_psiformer/features/magnetic.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/features/magnetic.py",
+      "source_lf_sha256": "aa30a6ed896dea0d1964677642de300282d9ba5a4984884e8702e5ef362666ef",
+      "published_lf_sha256": "aa30a6ed896dea0d1964677642de300282d9ba5a4984884e8702e5ef362666ef"
+    },
+    {
+      "published_file": "complex_psiformer/features/slater_magnetic.py",
+      "source_family": "slaternet",
+      "source_member": "complex_psiformer/features/magnetic.py",
+      "source_lf_sha256": "f6a21cb8eafb330eb777dc4573e86918c322e72266939dc6c301f3c737a7cd68",
+      "published_lf_sha256": "f6a21cb8eafb330eb777dc4573e86918c322e72266939dc6c301f3c737a7cd68"
+    },
+    {
+      "published_file": "complex_psiformer/models/kerr_mlp.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/kerr_mlp.py",
+      "source_lf_sha256": "204438c53e8d8058f7bdb96e31abe47f179dd7966b32d0922452e310774ce2a6",
+      "published_lf_sha256": "2008f93e3e1964839ecb6618b639f89e51359754fb84697b2772cc7bcc59feb2"
+    },
+    {
+      "published_file": "complex_psiformer/models/magnetic_boundary_adapter.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/magnetic_boundary_adapter.py",
+      "source_lf_sha256": "88905b34c98952f67de86c0ece0b84bd79b297d2d06dee9c44bab982a8100c63",
+      "published_lf_sha256": "7565a47991c6386c8ce9495463e2dc6984b3bb9d155cd0947168b914ca659f5c"
+    },
+    {
+      "published_file": "complex_psiformer/models/slater_boundary_adapter.py",
+      "source_family": "slaternet",
+      "source_member": "complex_psiformer/models/magnetic_boundary_adapter.py",
+      "source_lf_sha256": "0b75dd8f74a659b714dd105ed19219452cf14f12d8d46a750ac83f48240aa6bf",
+      "published_lf_sha256": "835697aa96662a3302451f702c7f387a04cf955dda0cd5afd8b9a1ad561306b9"
+    },
+    {
+      "published_file": "complex_psiformer/vmc/sampler.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/vmc/sampler.py",
+      "source_lf_sha256": "5fb5a56c521673dc4832475bd01288d99c4f8b81a246ef8d2f711fe3387b320e",
+      "published_lf_sha256": "c2fec935eab9f2403465c1e71502336804f59b07cf38935792fa48d4c5093775"
+    },
+    {
+      "published_file": "complex_psiformer/vmc/minsr_optimizer.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/vmc/minsr_optimizer.py",
+      "source_lf_sha256": "99fbbef5359fe8ee2cb8fb376432aafe6e718c57fb57b1f17399f76a82388421",
+      "published_lf_sha256": "99fbbef5359fe8ee2cb8fb376432aafe6e718c57fb57b1f17399f76a82388421"
+    },
+    {
+      "published_file": "complex_psiformer/models/slater_net.py",
+      "source_family": "slaternet",
+      "source_member": "complex_psiformer/models/slater_net.py",
+      "source_lf_sha256": "b0b47372d71f36bc51430e1cd8baed8c690c67b6cfaf205c98ae81cdb09693ad",
+      "published_lf_sha256": "dc72d5367873964b84a587eaec9ba767f61ba1bc55e0537da5f7eb4e61471c39"
+    },
+    {
+      "published_file": "complex_psiformer/models/complex_slater_net.py",
+      "source_family": "slaternet",
+      "source_member": "complex_psiformer/models/complex_slater_net.py",
+      "source_lf_sha256": "da88c273b4199e5eb10e52549e8a4a1d1f8c698f861461d201eafda6d3a457e7",
+      "published_lf_sha256": "cd69108499724ae1569ecd4511f91694c4601b259867e8b393e113b8b85d7b31"
+    },
+    {
+      "published_file": "complex_psiformer/models/real_psiformer.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/real_psiformer.py",
+      "source_lf_sha256": "81698bf666988c0f38f3da72518ae1cacbfed82f8ec50eda03484895cd42ffa2",
+      "published_lf_sha256": "4b93c27d1ba3fea89cabe5e91cf60ec8d57a122c41b37ab0dd162d5278e1d31e"
+    },
+    {
+      "published_file": "complex_psiformer/models/complex_psiformer/attention.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/hmga/attention.py",
+      "source_lf_sha256": "472319aa8c0d046e847542e4b6bb1f506b64dba87ff15a4c5afafb3b4825ddae",
+      "published_lf_sha256": "74ab9430bbae887552b5883887250cac17fbed448a744e38cd5aa01d39dc3c72"
+    },
+    {
+      "published_file": "complex_psiformer/models/complex_psiformer/block.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/hmga/block.py",
+      "source_lf_sha256": "0f4e72798364b0b890c497acb68b096cd84679cfa97001852bb5582fd2736dad",
+      "published_lf_sha256": "b6f6dd26b69972d9eebe5c2b94d5680554113671ecee400d576ba3910a58fa23"
+    },
+    {
+      "published_file": "complex_psiformer/models/complex_psiformer/wavefunction.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/models/hmga/wavefunction.py",
+      "source_lf_sha256": "ed6c709f39a6931cbf5666320edbecd2a771a37a36cca13ecef14f4da7d6656d",
+      "published_lf_sha256": "554d06fbe2f2abdeee5e1589e2cf0ff2d48c6d848b747aa8b309ceb76ce9a9ef"
+    },
+    {
+      "published_file": "complex_psiformer/systems/scaled_ewald.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/experiments/four_model_boundary_generality/hamiltonian.py",
+      "source_lf_sha256": "a98f761134abac6c2d5f928ec1639d59d11fa1911d672e9ada0a65359af73d38",
+      "published_lf_sha256": "dc3f1c95c93efba9dd5de4b0878372ec9191f5a6c9f670ed2471399868485ee0"
+    },
+    {
+      "published_file": "complex_psiformer/vmc/energy.py",
+      "source_family": "psiformer",
+      "source_member": "complex_psiformer/vmc/energy.py",
+      "source_lf_sha256": "a5ff54c56fb667f054fe1f1586fbefcac168daba4614d6b2676c24a9f5771451",
+      "published_lf_sha256": "d580bd8183d9f07e657b0e3845cd97e74c5a157b47a97ca2806b3a6161661e51"
+    }
+  ]
+}

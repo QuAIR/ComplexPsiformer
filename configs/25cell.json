@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "model_catalog": "models.json",
+  "seed": 1,
+  "system": {
+    "n_cell_sides": [
+      5,
+      5
+    ],
+    "n_electrons": 12,
+    "n_phi": 2,
+    "a_m_nm": 8.031,
+    "m_star": 0.35,
+    "epsilon_r": 5,
+    "v0_mev": 15,
+    "phi": 0.7854,
+    "lambda_c": 1,
+    "n_images": 5,
+    "magnetic_gauge": "symmetric",
+    "peierls_a": [
+      0,
+      0
+    ]
+  },
+  "training": {
+    "max_steps": 10000,
+    "batch_size": 384,
+    "burn_in": 0,
+    "sampler_step_size": 0.5,
+    "sampler_adapt_every": 50,
+    "sampler_target_acceptance": 0.5,
+    "kinetic_chunk_size": 24,
+    "clip_rho": 3,
+    "checkpoint_every": 250,
+    "validation_every": 250,
+    "float_dtype": "float64",
+    "complex_dtype": "complex128"
+  },
+  "optimizer": {
+    "kind": "minsr",
+    "eta_0": 0.03,
+    "t_0": 2000,
+    "damping": 0.03,
+    "norm_constraint": 0.0005,
+    "score_chunk_size": 16
+  }
+}

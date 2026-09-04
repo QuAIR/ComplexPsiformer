@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "complex-psiformer"
+version = "0.1.0"
+description = "Neural wavefunctions and VMC settings for two-dimensional magnetic moire systems"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch==2.10.0"]
+
+[project.urls]
+Repository = "https://github.com/QuAIR/ComplexPsiformer"
+
+[project.scripts]
+complex-psiformer-train = "complex_psiformer.train:main"
+complex-psiformer-sample = "complex_psiformer.sample:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["complex_psiformer*"]

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "models": {
+    "real_slaternet": {
+      "name": "Real SlaterNet",
+      "real_parameter_count": 14272,
+      "gate_warmup_steps": 0,
+      "kwargs": {
+        "d_model": 64,
+        "n_layers": 3,
+        "n_det": 1,
+        "paired_orbital_readout": false,
+        "embed_bias": false,
+        "embed_activation": "none",
+        "trainable_determinant_coefficients": false
+      }
+    },
+    "complex_slaternet": {
+      "name": "Complex SlaterNet",
+      "real_parameter_count": 13600,
+      "gate_warmup_steps": 0,
+      "kwargs": {
+        "d_model": 32,
+        "n_layers": 3,
+        "n_det": 1,
+        "order": 1,
+        "include_conjugates": false,
+        "embedding_kind": "free",
+        "per_block_kind": "free",
+        "activation": "kerr",
+        "embed_bias": false,
+        "embed_activation": "none",
+        "trainable_determinant_coefficients": false
+      }
+    },
+    "real_psiformer": {
+      "name": "Real PsiFormer",
+      "real_parameter_count": 43456,
+      "gate_warmup_steps": 0,
+      "kwargs": {
+        "d_model": 64,
+        "n_layers": 3,
+        "n_heads": 2,
+        "d_attn": 16,
+        "d_val": 16,
+        "n_det": 4,
+        "n_mlp_per_block": 1,
+        "feature_max_harmonic": 1,
+        "feature_harmonic_mode": "axis",
+        "attention_normalization": "paper",
+        "trainable_determinant_coefficients": false,
+        "determinant_combination": "sum"
+      }
+    },
+    "complex_psiformer": {
+      "name": "Complex PsiFormer",
+      "real_parameter_count": 40480,
+      "gate_warmup_steps": 500,
+      "kwargs": {
+        "d_model": 32,
+        "n_layers": 3,
+        "n_heads": 2,
+        "d_attn": 8,
+        "d_val": 8,
+        "n_det": 4,
+        "embedding_kind": "free",
+        "per_block_kind": "free",
+        "activation": "kerr",
+        "gate_init": 1,
+        "gate_trainable": false,
+        "attention_kind": "all_pairs",
+        "attention_score_mode": "abs_dot",
+        "attention_score_scale": 1,
+        "gate_parameterization": "positive_softplus",
+        "gate_max": 1,
+        "attention_residual_norm": "rms_cap",
+        "attention_residual_norm_eps": 0.000001,
+        "attention_residual_norm_cap_ratio": 1,
+        "trainable_determinant_coefficients": false
+      }
+    }
+  }
+}

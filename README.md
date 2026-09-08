@@ -49,6 +49,11 @@ any optimizer update. Available model keys are `real_slaternet`,
 
 ## Training
 
+Version 0.2.0 adds the optional accelerated `forward_vgl` backend for Complex/Real
+PsiFormer. Add `--compute-backend forward_vgl --compute-chunk-size 384` to the
+training or sampling command. The default remains `baseline`; see
+[acceleration, validation, and checkpoint compatibility](docs/acceleration.md).
+
 The following command starts one training run, using 10,000 MinSR updates and
 384 walkers:
 

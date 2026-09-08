@@ -11,15 +11,18 @@ import torch
 
 from .checkpoint import (assert_finite, atomic_save, canonical_hash, read_checkpoint,
                          restore_training, save_checkpoint, source_hash)
-from .runtime import (MODEL_CLASSES, build_runtime, evaluate_local_energy, load_config,
+from .runtime import (MODEL_CLASSES, build_runtime, load_config,
                       positive_integer, validate_config)
 from .vmc.energy import clip_local_energy
+from .compute import compute_policy, evaluate_energy
 
 
 def train(config: dict[str, Any], output: str | Path, *, device: str = "cpu",
-          stop_at: int | None = None, resume: str | Path | None = None) -> Path:
+          stop_at: int | None = None, resume: str | Path | None = None,
+          compute_backend: str = "baseline", compute_chunk_size: int | None = None) -> Path:
     """Run to an absolute step; every invocation writes into a new directory."""
     validate_config(config)
+    policy = compute_policy(config, compute_backend, compute_chunk_size)
     settings = config["training"]
     stop_at = settings["max_steps"] if stop_at is None else stop_at
     positive_integer(stop_at, "stop_at")
@@ -28,6 +31,8 @@ def train(config: dict[str, Any], output: str | Path, *, device: str = "cpu",
     # Validate before building or creating any output directory.
     payload = read_checkpoint(resume) if resume is not None else None
     if payload is not None:
+        if payload["compute_policy"] != policy:
+            raise ValueError("resume compute policy differs from the checkpoint")
         if payload["config"] != config:
             raise ValueError("resume configuration differs from the checkpoint")
         if payload["completed_step"] >= stop_at:
@@ -48,7 +53,7 @@ def train(config: dict[str, Any], output: str | Path, *, device: str = "cpu",
     output.mkdir(parents=True, exist_ok=False)
     atomic_save(output / "experiment_manifest.json", {
         "config": config, "config_sha256": canonical_hash(config),
-        "source_sha256": source_hash(),
+        "source_sha256": source_hash(), "compute_policy": policy,
         "resume_from_step": start_step,
     })
     started = time.perf_counter()
@@ -61,7 +66,7 @@ def train(config: dict[str, Any], output: str | Path, *, device: str = "cpu",
         walkers, cached_log, acceptance = runtime.sampler.step(walkers, cached_log.detach())
         positions = walkers.detach().requires_grad_(True)
         log_abs, phase = runtime.model.log_psi(positions)
-        energy_raw = evaluate_local_energy(runtime, positions).detach()
+        energy_raw = evaluate_energy(runtime, positions, policy).detach()
         assert_finite((energy_raw, log_abs, phase), "training inputs")
         signal = torch.complex(
             clip_local_energy(energy_raw.real.to(torch.float64), rho=settings["clip_rho"]),
@@ -91,7 +96,8 @@ def train(config: dict[str, Any], output: str | Path, *, device: str = "cpu",
         if completed % settings["checkpoint_every"] == 0 or completed == stop_at:
             suffix = "final" if completed == settings["max_steps"] else f"step{completed:06d}"
             checkpoint_path = output / f"checkpoint_{suffix}.pt"
-            save_checkpoint(runtime, checkpoint_path, walkers, cached_log, history)
+            save_checkpoint(runtime, checkpoint_path, walkers, cached_log, history,
+                            compute=policy)
             atomic_save(output / "history.json", history)
             print(json.dumps(record, allow_nan=False), flush=True)
     if checkpoint_path is None:
@@ -108,10 +114,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--stop-at", type=int)
     parser.add_argument("--resume", type=Path)
+    parser.add_argument("--compute-backend", choices=("baseline", "forward_vgl"), default="baseline")
+    parser.add_argument("--compute-chunk-size", type=int)
     args = parser.parse_args(argv)
     config = load_config(args.config, args.model, n_phi=args.n_phi)
     checkpoint = train(config, args.output, device=args.device,
-                       stop_at=args.stop_at, resume=args.resume)
+                       stop_at=args.stop_at, resume=args.resume,
+                       compute_backend=args.compute_backend, compute_chunk_size=args.compute_chunk_size)
     print(f"Saved {checkpoint}", flush=True)
     return 0
 

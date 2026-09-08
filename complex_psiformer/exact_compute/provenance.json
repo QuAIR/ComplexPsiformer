@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Erdong-Huang/Quantum-Matter",
+  "branch": "training-time-optimization",
+  "commit": "9828f69871ed47baecf07fbc3bfba88969db0cd5",
+  "source_sha256_lf": {
+    "vmc/forward_laplacian.py": "5ca72abacf55ff1c9014e5c8577e234e854a9847d2b1f434063424c1724f862d",
+    "models/hmga/forward_laplacian.py": "dc4186beeba35b99621741b29c1b8e8f28ce25ab364b5f8334ee179bf5963b70",
+    "models/real_forward_laplacian.py": "3a4a5dde42cbc9772a5bba219736c7ce6f09143720be7756363235074589722b"
+  }
+}

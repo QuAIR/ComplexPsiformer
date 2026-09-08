@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "complex-psiformer"
-version = "0.1.0"
+version = "0.2.0"
 description = "Neural wavefunctions and VMC settings for two-dimensional magnetic moire systems"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,3 +20,6 @@ complex-psiformer-sample = "complex_psiformer.sample:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["complex_psiformer*"]
+
+[tool.setuptools.package-data]
+"complex_psiformer.exact_compute" = ["provenance.json"]

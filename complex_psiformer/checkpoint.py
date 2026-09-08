@@ -13,6 +13,7 @@ from typing import Any
 import torch
 
 from .runtime import Runtime, validate_config
+from .compute import compute_policy, validate_compute_policy
 
 
 def canonical_hash(value: Any) -> str:
@@ -87,9 +88,13 @@ def atomic_save(path: Path, value: Any, *, tensor_file: bool = False) -> None:
 
 
 def save_checkpoint(runtime: Runtime, path: Path, walkers: torch.Tensor,
-                    cached_log: torch.Tensor, history: list[dict[str, Any]]) -> None:
+                    cached_log: torch.Tensor, history: list[dict[str, Any]],
+                    *, compute: dict[str, Any] | None = None) -> None:
+    compute = compute_policy(runtime.config) if compute is None else compute
+    validate_compute_policy(runtime.config, compute)
     payload = {
         "schema_version": 1,
+        "compute_policy": compute,
         "kind": "complex_psiformer_training",
         "source_sha256": source_hash(),
         "config": runtime.config,
@@ -120,6 +125,7 @@ def read_checkpoint(path: str | Path) -> dict[str, Any]:
     if payload["source_sha256"] != source_hash():
         raise ValueError("checkpoint source hash differs from the installed implementation")
     validate_config(payload["config"])
+    validate_compute_policy(payload["config"], payload.get("compute_policy"))
     if payload["config_sha256"] != canonical_hash(payload["config"]):
         raise ValueError("checkpoint configuration hash mismatch")
     step = payload["completed_step"]

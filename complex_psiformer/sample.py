@@ -7,11 +7,13 @@ from pathlib import Path
 import torch
 
 from .checkpoint import assert_finite, atomic_save, read_checkpoint
-from .runtime import build_runtime, evaluate_local_energy, positive_integer
+from .runtime import build_runtime, positive_integer
+from .compute import compute_policy, evaluate_energy
 
 
 def sample(checkpoint: str | Path, output: str | Path, *, device: str = "cpu",
-           burn_in: int, sweeps: int, thin: int) -> Path:
+           burn_in: int, sweeps: int, thin: int,
+           compute_backend: str = "baseline", compute_chunk_size: int | None = None) -> Path:
     """Return raw complex energies, retaining both sweep and walker axes."""
     positive_integer(burn_in, "burn_in", allow_zero=True)
     positive_integer(sweeps, "sweeps")
@@ -20,6 +22,7 @@ def sample(checkpoint: str | Path, output: str | Path, *, device: str = "cpu",
     if output.exists():
         raise FileExistsError("choose a new sampling output directory")
     payload = read_checkpoint(checkpoint)
+    policy = compute_policy(payload["config"], compute_backend, compute_chunk_size)
     runtime = build_runtime(payload["config"], device)
     runtime.base_model.load_state_dict(payload["model_state"], strict=True)
     runtime.model.eval()
@@ -40,7 +43,7 @@ def sample(checkpoint: str | Path, output: str | Path, *, device: str = "cpu",
         for _ in range(thin):
             walkers, cached_log, fraction = runtime.sampler.step(walkers, cached_log)
             accepted += fraction
-        energy = evaluate_local_energy(runtime, walkers.detach().requires_grad_(True)).detach()
+        energy = evaluate_energy(runtime, walkers.detach().requires_grad_(True), policy).detach()
         assert_finite(energy, "sampled local energy")
         raw.append(energy.cpu())
         acceptance.append(accepted / thin)
@@ -51,6 +54,8 @@ def sample(checkpoint: str | Path, output: str | Path, *, device: str = "cpu",
         "config": payload["config"],
         "completed_step": payload["completed_step"],
         "source_sha256": payload["source_sha256"],
+        "training_compute_policy": payload["compute_policy"],
+        "compute_policy": policy,
         "protocol": {"seed": payload["config"]["seed"], "burn_in": burn_in,
                      "sweeps": sweeps, "thin": thin},
         "energy_raw_complex": torch.stack(raw),
@@ -72,9 +77,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--burn-in", type=int, required=True)
     parser.add_argument("--sweeps", type=int, required=True)
     parser.add_argument("--thin", type=int, required=True)
+    parser.add_argument("--compute-backend", choices=("baseline", "forward_vgl"), default="baseline")
+    parser.add_argument("--compute-chunk-size", type=int)
     args = parser.parse_args(argv)
     target = sample(args.checkpoint, args.output, device=args.device,
-                    burn_in=args.burn_in, sweeps=args.sweeps, thin=args.thin)
+                    burn_in=args.burn_in, sweeps=args.sweeps, thin=args.thin,
+                    compute_backend=args.compute_backend, compute_chunk_size=args.compute_chunk_size)
     print(f"Saved unclipped samples to {target}", flush=True)
     return 0
 

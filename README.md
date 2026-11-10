@@ -3,8 +3,11 @@
 Neural wavefunctions for two-dimensional magnetic moiré systems.
 
 This repository provides model construction, physical and numerical parameters,
-and minimal VMC training and frozen-network sampling entry points. It does not
-include trained weights, experimental results, or plotting assets.
+and minimal VMC training and frozen-network sampling entry points.
+
+The numerical inputs for Figures 2–4, per-state energy estimates, and sampling
+diagnostics for *Learning Quantum Matter through Attention in Complex Space*
+are available in the [supplemental data archive](data/prx-intelligence/supplemental-data.zip).
 
 ## Models
 

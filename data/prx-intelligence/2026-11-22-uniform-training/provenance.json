@@ -1,0 +1,198 @@
+{
+  "source_records": {
+    "negligible": {
+      "sources": [
+        {
+          "path": "/home/leizhang/projects/ComplexPsiformer/learnable_readout_n12_flux40_20261106/compute_upgrade/results/N12_flux40_seed96001/train/history.jsonl",
+          "sha256": "d525193ef5b39c32150b430f1a3731bdcdab6364ba0ab0b47912fb4f629a1bc4",
+          "first_step": 1,
+          "last_step": 15000
+        },
+        {
+          "path": "/home/leizhang/projects/ComplexPsiformer/triangular_candidate_n12_flux40_20261107/ordinary_continuation/train/history.jsonl",
+          "sha256": "d2cad68617967e54bc8ffbbf2f82eadd2dddf477605bf627639c4a92a4341552",
+          "first_step": 15001,
+          "last_step": 20000
+        }
+      ],
+      "frozen": [
+        {
+          "chain": 0,
+          "seed": 187920000,
+          "terminal_state_sha256": "b9ee51766c9f8ab0b0e7d7f471e2ff99a07e2146db179f1dd8215553256c07ab",
+          "checkpoint_sha256": "e0183e391e7ff17847928a3cc9483016ac3d2dc5951f908ab9dde6f5b089913a"
+        },
+        {
+          "chain": 1,
+          "seed": 187920001,
+          "terminal_state_sha256": "b9ee51766c9f8ab0b0e7d7f471e2ff99a07e2146db179f1dd8215553256c07ab",
+          "checkpoint_sha256": "e0183e391e7ff17847928a3cc9483016ac3d2dc5951f908ab9dde6f5b089913a"
+        }
+      ],
+      "completion": {
+        "step": 20000,
+        "optimizer_t": 20000,
+        "model_state_sha256": "b9ee51766c9f8ab0b0e7d7f471e2ff99a07e2146db179f1dd8215553256c07ab",
+        "elapsed_seconds": 21081.070630311966
+      },
+      "system": {
+        "n_cell_sides": null,
+        "n_electrons": 12,
+        "n_phi": 40,
+        "a_m_nm": null,
+        "m_star": 0.35,
+        "epsilon_r": 5.0,
+        "v0_mev": 0.0,
+        "phi": 0.7854,
+        "lambda_c": 1.0,
+        "n_images": 7,
+        "magnetic_gauge": "symmetric",
+        "peierls_a": [
+          0.0,
+          0.0
+        ],
+        "L_aBstar": [
+          [
+            153.31940438338347,
+            0.0
+          ],
+          [
+            76.65970219169174,
+            132.7784990891093
+          ]
+        ]
+      },
+      "optimizer": {
+        "kind": "minsr",
+        "eta_0": 0.03,
+        "t_0": 2000,
+        "damping": 0.03,
+        "norm_constraint": 0.0005,
+        "score_chunk_size": 16
+      },
+      "sampling": {
+        "kind": "exact replica-exchange mixed torus Metropolis",
+        "betas": [
+          1.0,
+          0.65,
+          0.4,
+          0.23,
+          0.12,
+          0.055,
+          0.02,
+          0.0
+        ],
+        "cold_walkers": 1024,
+        "cycles_per_update": 1,
+        "initial_burn_cycles": 2000,
+        "proposal_probabilities": [
+          0.45,
+          0.3,
+          0.2,
+          0.05
+        ],
+        "refresh_cached_log_after_each_weight_or_gate_change": true,
+        "adapt_during_training": true,
+        "source": "completed fixed-weight mixing diagnostic kernel"
+      }
+    },
+    "six_peaks": {
+      "sources": [
+        {
+          "path": "/home/leizhang/projects/ComplexPsiformer/triangular_candidate_n12_flux40_gpu15_recovery_20261108/train/history.jsonl",
+          "sha256": "c2ddf5f93745114faf9c545e98d4323de65155219b7988b7fb13f72865d5076f",
+          "first_step": 1,
+          "last_step": 20000
+        }
+      ],
+      "frozen": [
+        {
+          "chain": 0,
+          "seed": 259920000,
+          "terminal_state_sha256": "6c350495be1c0e1d516b33519b996e118a94a5e808928ac5123a5fb00ee1deea",
+          "checkpoint_sha256": "349762af7f06e51d610d027343a579b9851cd690efb3a4218e2a15290409b808"
+        },
+        {
+          "chain": 1,
+          "seed": 259920001,
+          "terminal_state_sha256": "6c350495be1c0e1d516b33519b996e118a94a5e808928ac5123a5fb00ee1deea",
+          "checkpoint_sha256": "349762af7f06e51d610d027343a579b9851cd690efb3a4218e2a15290409b808"
+        }
+      ],
+      "completion": {
+        "state": "complete",
+        "step": 20000,
+        "optimizer_t": 20000,
+        "model_state_sha256": "6c350495be1c0e1d516b33519b996e118a94a5e808928ac5123a5fb00ee1deea",
+        "wall_seconds": 88531.32601284981,
+        "smoke_only": false
+      },
+      "system": {
+        "n_cell_sides": null,
+        "n_electrons": 12,
+        "n_phi": 40,
+        "a_m_nm": null,
+        "m_star": 0.35,
+        "epsilon_r": 5.0,
+        "v0_mev": 0.0,
+        "phi": 0.7854,
+        "lambda_c": 1.0,
+        "n_images": 7,
+        "magnetic_gauge": "symmetric",
+        "peierls_a": [
+          0.0,
+          0.0
+        ],
+        "L_aBstar": [
+          [
+            153.31940438338347,
+            0.0
+          ],
+          [
+            76.65970219169174,
+            132.7784990891093
+          ]
+        ]
+      },
+      "optimizer": {
+        "kind": "minsr",
+        "eta_0": 0.03,
+        "t_0": 2000,
+        "damping": 0.03,
+        "norm_constraint": 0.0005,
+        "score_chunk_size": 16
+      },
+      "sampling": {
+        "kind": "exact replica-exchange mixed torus Metropolis",
+        "betas": [
+          1.0,
+          0.65,
+          0.4,
+          0.23,
+          0.12,
+          0.055,
+          0.02,
+          0.0
+        ],
+        "cold_walkers": 1024,
+        "cycles_per_update": 1,
+        "initial_burn_cycles": 2000,
+        "proposal_probabilities": [
+          0.45,
+          0.3,
+          0.2,
+          0.05
+        ],
+        "refresh_cached_log_after_each_weight_or_gate_change": true,
+        "adapt_during_training": true,
+        "source": "completed fixed-weight mixing diagnostic kernel"
+      }
+    }
+  },
+  "estimator": "Unclipped real local energy, averaged over training walkers before each update.",
+  "conversion_atomic_total_to_meV_per_electron": 31.746617286985995,
+  "block_size_updates": 100,
+  "display_labels": "Labels describe terminal pair correlations, not initial conditions or symmetry eigenvalues.",
+  "table_estimator": "Table S3 uses independently sampled, fixed-parameter quadratic-form energies.",
+  "csv_sha256": "f09afe8bd7040fc0204a1faf0de46dde2524994dcbf163fede2a14b67dd5198b"
+}

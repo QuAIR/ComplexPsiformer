@@ -22,7 +22,7 @@ block = 100
 x = data['update'].reshape(-1, block).mean(axis=1)/1000
 curves = [
     ('negligible_energy_meV_per_electron', 'Negligible angular contrast', '#0072B2', '-'),
-    ('six_peaks_energy_meV_per_electron', 'Six first-shell peaks', '#D55E00', '--'),
+    ('six_peaks_energy_meV_per_electron', 'Six first-shell peaks', '#D55E00', '-'),
 ]
 for field, label, color, style in curves:
     y = data[field].reshape(-1, block).mean(axis=1)

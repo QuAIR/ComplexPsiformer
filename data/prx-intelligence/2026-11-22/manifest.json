@@ -1,0 +1,166 @@
+{
+  "snapshot_date": "2026-11-22",
+  "source_directory": "PRX Intelligence",
+  "source_overleaf_commit": "b46e4e841e3d1e75db39a817bb929926836de365",
+  "files_copied_without_modification": true,
+  "source_file_count": 25,
+  "total_source_bytes": 7195396,
+  "current_manuscript_figures": [
+    "figs/figure1_method.pdf",
+    "figs/figure7_optimizer_comparison.pdf",
+    "figs/filling_charge_order_single_column.pdf",
+    "figs/figure4_continuum.pdf"
+  ],
+  "files": [
+    {
+      "path": "benchmark-data/supercell_benchmark_provenance.json",
+      "bytes": 130796,
+      "sha256": "558b7b8a74b56c8f2f87a9541871f8659d159533f51288fd0ee7befd3047021a",
+      "git_blob_sha1": "1439502baa81d0305dc73ebde4fb41b51ec06014"
+    },
+    {
+      "path": "benchmark-data/supercell_benchmark_seedwise.csv",
+      "bytes": 10588,
+      "sha256": "85ea10dd1dff0127ddd2675cae41dfc18f00200e6bdd4d7fcec4bffd94e1a480",
+      "git_blob_sha1": "918cf3478db490c4fb51534402dc50ec9fc24676"
+    },
+    {
+      "path": "figure2_source/.gitattributes",
+      "bytes": 33,
+      "sha256": "78e182c1786bc84ac435e2fe8ac30086b5c25f6a4f71348a663506a84b3917a6",
+      "git_blob_sha1": "24e66400ceefc13db36d6ab5b61b7981a66ed444"
+    },
+    {
+      "path": "figure2_source/figure2_grayscale.png",
+      "bytes": 33276,
+      "sha256": "e95e524682578ac700488607de5dfff4f71f40216488416a550cc40b08130744",
+      "git_blob_sha1": "9a696b1b19e6d0193c3c7ffc3420fc484ad9719f"
+    },
+    {
+      "path": "figure2_source/figure2_plot_data_meV_per_electron.csv",
+      "bytes": 67593,
+      "sha256": "cd520e85bfe4c8230262ad991d28735508741ff09efe4fcebf9c95c4b5f2490b",
+      "git_blob_sha1": "ab35a23320c62bbc8f12c6defea545f502c9d0a9"
+    },
+    {
+      "path": "figure2_source/figure2_preview.png",
+      "bytes": 65223,
+      "sha256": "7046487aeefaaf47480148fec89d7fe05c900fc4043127e6185db02ddcc4c508",
+      "git_blob_sha1": "c080718e346876d86edb4ef84e9cbf0125bc6747"
+    },
+    {
+      "path": "figure2_source/figure2_single_column.svg",
+      "bytes": 84203,
+      "sha256": "e1ea8dac4c1c097997f6536050f49d62f76932254af21f6bfc6939f87e783aec",
+      "git_blob_sha1": "ff877b6d4e86f5296c3225839e7d3d7844d70c29"
+    },
+    {
+      "path": "figure2_source/figure_s1_energy_vs_step_with_complex_minsr.csv",
+      "bytes": 3372037,
+      "sha256": "c486af7be43b3c031dfac603a3520f06206c6ae5e40b7000f2e7dd23a210b632",
+      "git_blob_sha1": "5b00399abc9815107b1f8c9f2c3d79227ff34bf8"
+    },
+    {
+      "path": "figure2_source/figure_s1_plot_data.csv",
+      "bytes": 68894,
+      "sha256": "cb4d5b0d09e9083e234cd0f37069974ce76d9af707e05c9cf3afef43ff17972f",
+      "git_blob_sha1": "b459e30f4fa8206bdbd16ebf105b00f57a4d7552"
+    },
+    {
+      "path": "figure2_source/plot_figure2.py",
+      "bytes": 9561,
+      "sha256": "52035eb1ab63e2f1af3e1a3208fb57289bb0df5075631736d7bb80beec6fb7df",
+      "git_blob_sha1": "81c6e2a944c14fe293c9d0e6d08b84981aa7b8a1"
+    },
+    {
+      "path": "figure2_source/provenance.json",
+      "bytes": 2198,
+      "sha256": "36dccae0656fd9080bd5333bbbc273c5282f7f6823c4a5fe41f5e212bd736a8f",
+      "git_blob_sha1": "a9e427f712c302efce6689eb41ef2b4cbad6626b"
+    },
+    {
+      "path": "figure2_source/README.md",
+      "bytes": 2214,
+      "sha256": "4719519565fe1bafb380bb2f5791876ffa53465a1459bfbeeac725dd5dd36bc3",
+      "git_blob_sha1": "1177260e5d9a4c3acb9a6f049285e3080bbc64fc"
+    },
+    {
+      "path": "figure4_source/figure4_data.npz",
+      "bytes": 823263,
+      "sha256": "658bd3fe23673ffbfe075710d9b1ad426e44ebca5e920573273e06079bada87a",
+      "git_blob_sha1": "53b9d122d1e57dd7355afc3a89b125ff1be5499b"
+    },
+    {
+      "path": "figure4_source/figure4_lower_panels.pdf",
+      "bytes": 663558,
+      "sha256": "6526159470a802f5d9c4e31da76caa734d339061ad7a2f428a27326328c9b55b",
+      "git_blob_sha1": "814e61ca3f4d0819b3660aaa47aa703654886dda"
+    },
+    {
+      "path": "figure4_source/figure4_preview.png",
+      "bytes": 190135,
+      "sha256": "3a3b7970ce8934b4e5cbd4efec5b3ff433c3a7226d324b26662f08414f031e2e",
+      "git_blob_sha1": "785dd496ebf2c5de3f8bbba83dfc9e919cc31ae7"
+    },
+    {
+      "path": "figure4_source/plot_figure4.py",
+      "bytes": 4324,
+      "sha256": "2fd0a224b2460b53b71a61bdfb2c7c5aed7f13bcf860d9f9b2b1c41ccadacca7",
+      "git_blob_sha1": "0063bd36aaed5db80b6b5ded2d9370f0b0783823"
+    },
+    {
+      "path": "figure4_source/provenance.json",
+      "bytes": 3949,
+      "sha256": "b6b1f88e2240ba79c8d17b008c81a9eb5b927e10089ff8cfd0018df645610a9e",
+      "git_blob_sha1": "6b73595671dbf3ebf93eb39ac4be2e3e5c2ccbcb"
+    },
+    {
+      "path": "figure4_source/README.md",
+      "bytes": 2031,
+      "sha256": "647156fbed0355ebdf2dde53eba43b8cb13e9ce2194de8c232f840622104a57e",
+      "git_blob_sha1": "6875b30b0573e9a9b1c0851308fbda1c421d8866"
+    },
+    {
+      "path": "figs/figure1_method.pdf",
+      "bytes": 140437,
+      "sha256": "71e8d66b88442fce3841436654ef308a3e5a00ee3e752cf5fc28891dcc177558",
+      "git_blob_sha1": "7757fc9ee5002a207b9e772b11019dc3b6538ff2"
+    },
+    {
+      "path": "figs/figure1_method.svg",
+      "bytes": 52435,
+      "sha256": "dc1f555aa489b0f4aeec710d1af2cbf853fabf422736ea9173b9f771ee9ef785",
+      "git_blob_sha1": "8e892149de6b99b780cb92eea57ac24f3fcc8688"
+    },
+    {
+      "path": "figs/figure4_continuum.pdf",
+      "bytes": 1066545,
+      "sha256": "2af2615fcf6129b2bf5b3fbf87298cfc19a2af3d42b5d78faa91e54028fd97e7",
+      "git_blob_sha1": "796e9db695a712afbef703e4a63b07dfca2d5b77"
+    },
+    {
+      "path": "figs/figure7_optimizer_comparison (1).pdf",
+      "bytes": 89961,
+      "sha256": "00df718d351e16433ea065e83210e8fb943565c635f845dc1ec524377c79cdb2",
+      "git_blob_sha1": "7f507ab631997f398d19e974079894153664f21b"
+    },
+    {
+      "path": "figs/figure7_optimizer_comparison.pdf",
+      "bytes": 66107,
+      "sha256": "da38a9ed4fb3b9642a033823f2c135bcd2c8bd4249396d313a2389a36600b2f9",
+      "git_blob_sha1": "803b25a1190bc1bb7222266df12879662fde9ea6"
+    },
+    {
+      "path": "figs/filling_charge_order_single_column.pdf",
+      "bytes": 179928,
+      "sha256": "18942c249455e34c67a9b6c3d65c9cb7d3225d6b2baa788c38001880a671c1c0",
+      "git_blob_sha1": "85415e7edc2efb2cb17e54571d0b7a1be93ad569"
+    },
+    {
+      "path": "figs/model_comparisons_combined.pdf",
+      "bytes": 66107,
+      "sha256": "19fff03d09d69e78dce1a0c3eac6f2951a46ffd87a88f751dae6a71c1eb0c4c7",
+      "git_blob_sha1": "9fe34f3c4cedf95632d3c01318122a1daf8a3714"
+    }
+  ]
+}

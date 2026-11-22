@@ -1,0 +1,63 @@
+{
+  "figure": "Figure 2",
+  "raw_rows": 80000,
+  "block_rows": 800,
+  "series_mapping": {
+    "complex_minsr": "MinSR (Complex)",
+    "complex_amplitude_kfac": "KFAC (Complex)",
+    "real_minsr": "MinSR (Real)",
+    "real_kfac": "KFAC (Real)"
+  },
+  "flux_values": [
+    1,
+    2
+  ],
+  "updates_per_trajectory": 10000,
+  "block_size": 100,
+  "summary": "Arithmetic mean in nonoverlapping 100-update blocks, plotted at block end.",
+  "band": "Within-block minimum and maximum; not a confidence interval or seed variability.",
+  "kfac_complex_scope": "Amplitude-only KFAC, as named in the supplied raw CSV and current manuscript.",
+  "data_recomputation_max_abs_error": {
+    "energy_mean": 8.881784197001252e-16,
+    "energy_min": 0.0,
+    "energy_max": 0.0
+  },
+  "width_pt": 249.44882,
+  "height_pt": 184.0,
+  "energy_unit": "meV/electron",
+  "energy_quantity": "training energy per electron",
+  "n_electrons": 12,
+  "input_energy_unit": "effective Hartree",
+  "conversion": {
+    "hartree_meV": 27211.386245988,
+    "m_star_over_m_e": 0.35,
+    "epsilon_r": 5.0,
+    "Ha_star_meV": 380.95940744383194,
+    "formula": "Ha_star_meV = hartree_meV * m_star_over_m_e / epsilon_r**2",
+    "per_electron_scale": 31.746617286985995,
+    "display_formula": "energy_meV_per_electron = total_energy_Ha_star * Ha_star_meV / n_electrons"
+  },
+  "conversion_source": "Manuscript Sec. II and Appendix A; project systems/units.py (CODATA 2018 constant).",
+  "axes_color": "#222222",
+  "axes_linewidth_pt": 0.7,
+  "legend_border": true,
+  "panel_gap_pt": 32.428346600000005,
+  "palette": {
+    "Complex": "#376F96",
+    "Real": "#A45231"
+  },
+  "line_styles": {
+    "MinSR": "solid",
+    "KFAC": "dashed"
+  },
+  "markers": {
+    "Complex": "open circle",
+    "Real": "open diamond"
+  },
+  "source_sha256": {
+    "figure_s1_energy_vs_step_with_complex_minsr.csv": "c486af7be43b3c031dfac603a3520f06206c6ae5e40b7000f2e7dd23a210b632",
+    "figure_s1_plot_data.csv": "cb4d5b0d09e9083e234cd0f37069974ce76d9af707e05c9cf3afef43ff17972f"
+  },
+  "pdf_sha256": "da38a9ed4fb3b9642a033823f2c135bcd2c8bd4249396d313a2389a36600b2f9",
+  "text_within_canvas": true
+}

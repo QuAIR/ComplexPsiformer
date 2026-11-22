@@ -1,0 +1,97 @@
+{
+  "original_checkpoint": "/home/leizhang/projects/ComplexPsiformer/triangular_candidate_n12_flux36_20261107/ordinary_continuation/train/final.pt",
+  "original_sample_metadata": {
+    "chain": 0,
+    "ticks": 1792,
+    "walkers": 128,
+    "status": "sampling",
+    "seed": 187820000,
+    "checkpoint_sha256": "e5dd8aa6692a71f4f4c7aafefd7053787ae8a93bdcd60358c10b33cc508fe675",
+    "model_sha256": "d3d6f4525a449035f9e5065077a7fa90eca0515666079e4f93565f087e5679fc",
+    "lattice": [
+      [
+        145.45155820556863,
+        0.0
+      ],
+      [
+        72.72577910278432,
+        125.96474442605334
+      ]
+    ],
+    "B": 0.012345679012345678,
+    "prefix_sha256": "ab83e1a93976e73b4c383ce192f271a5b6cd48d5599b7d3d571c972da767ea03",
+    "snapshot": "2026-11-08T14:09:08.205053+00:00"
+  },
+  "method": "Equal-weight average over six rotations of the same sampled coordinates; no interpolation or smoothing before histogramming.",
+  "projection_scope": "Observable / probability-ensemble averaging, not coherent wavefunction projection.",
+  "independent_sample_count_warning": "229376 retained configurations, with MCMC correlations. Six rotated copies are not independent samples.",
+  "pair_bins": 384,
+  "one_body_bins": 128,
+  "rotation_degrees": [
+    0,
+    60,
+    120,
+    180,
+    240,
+    300
+  ],
+  "pair_rotation_origin": "zero pair displacement",
+  "one_body_rotation_origin": "cell origin (0,0)",
+  "exact_original_map_reproduced": true,
+  "sample_prefix_sha256_verified": true,
+  "g_cell_mean_original": 0.9166666666666666,
+  "g_cell_mean_c6": 0.9166666666666665,
+  "rho_cell_mean_original": 0.9999999999999999,
+  "rho_cell_mean_c6": 1.0,
+  "one_body_density_range_original": [
+    0.023809523809523808,
+    3.505952380952381
+  ],
+  "one_body_density_range_c6": [
+    0.4603174603174603,
+    1.6765873015873016
+  ],
+  "one_body_density_colorbar": "TwoSlopeNorm centered at mean density 1; shared full range, no clipping.",
+  "relative_angular_harmonic_amplitudes": {
+    "2": {
+      "original": 0.016323766280447908,
+      "c6": 1.2525380323114103e-05
+    },
+    "4": {
+      "original": 0.03885765977152634,
+      "c6": 3.599594505269899e-05
+    },
+    "6": {
+      "original": 0.09210104408131138,
+      "c6": 0.09203542607304042
+    },
+    "8": {
+      "original": 0.07573816421416736,
+      "c6": 3.8146945455618055e-05
+    },
+    "10": {
+      "original": 0.02991516244456453,
+      "c6": 3.681279278212874e-05
+    },
+    "12": {
+      "original": 0.008348416894916865,
+      "c6": 0.008379807880158246
+    }
+  },
+  "angular_residual_note": "Small forbidden harmonics may remain due to finite histogram bins and interpolation used for the diagnostic shell integration. No sampling uncertainty estimated.",
+  "source_data_sha256": "e8c5d9019a7af522df5a3024047dc2b4a69958bcdce40bc2a5e3ea7dd3875e42",
+  "date": "2026-11-20",
+  "base_overleaf_commit": "cdc4964cd64cdf695156e9bae76b78ec836fca32",
+  "figure_width_pt": 249.44882202148438,
+  "figure_height_pt": 260.78741455078125,
+  "lower_panels_y_start_pt": 122.57008483886717,
+  "previous_figure_sha256": "21295f17058c3306da49a9d739a9b710056fd0b65df593aadb2f20729b0787a9",
+  "display_rotation_degrees": 11.704391616748474,
+  "panel_b": "Original histogram; unchanged orientation.",
+  "panel_c": "Original angular-contrast plot and uncertainty bands; retained in vector PDF form.",
+  "lower_panels_pdf_sha256": "6526159470a802f5d9c4e31da76caa734d339061ad7a2f428a27326328c9b55b",
+  "sampling_rotation_script_sha256": "bdd870722644615fae209bb88f947f09deddda8ef8e90286952ded61c079dae2",
+  "reproduction_script_sha256": "2fd0a224b2460b53b71a61bdfb2c7c5aed7f13bcf860d9f9b2b1c41ccadacca7",
+  "display_window": "Fixed hexagonal crop with the same orientation in panels (a,b); only the periodically extended map in panel (a) is rotated.",
+  "display_window_is_rotated_cell_boundary": false
+}
